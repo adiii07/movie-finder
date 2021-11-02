@@ -12,6 +12,12 @@
         <h2>{{movie.title}}</h2>
         <p><span>Realease Date: </span>{{ movie.release_date }}</p>
         <p><span>Overview: </span>{{movie.overview}}</p>
+        <p><span>Genres: </span></p>
+        {% for genre in movie.genres %}
+            <ul>
+                <li>{{ genre["name"] }}</li>
+            </ul>
+        {% endfor %}
         <p><span>Popularity:</span> {{ movie.popularity }}</p>
         <p><span>Vote Average:</span> {{movie.vote_average}}</p>
         <p><span>Cast:</span> </p>

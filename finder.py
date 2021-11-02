@@ -23,4 +23,4 @@ def get_cast(id):
         cast.append(actor["name"])
     return cast
 
-print(get_cast(1726))
+print(get_movie(1726).genres)
