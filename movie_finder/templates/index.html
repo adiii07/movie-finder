@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
-    <title>Document</title>
+    <title>Easy Movie Finder</title>
 </head>
 <body>
     <form method="POST">
@@ -14,24 +14,5 @@
         <input type="submit" value="Search" class="form-submit">
     </form>
 
-    <div class="main-movie">
-        <h2 class="movie-main-title">{{ movie1.title }}</h2>
-        <p class="movie-main-p">{{ movie1.overview }}</p>
-        <p class="main-learn"><a href="{{ url_for('movie', id=movie1.id) }}">Learn More</a></p>
-    </div>
-    
-    <h2 class="similar">Similar Results:</h2>
-    <div class="others">
-    {% for movie in movie_list %}
-        {% if movie %}
-        <div class="movie">
-            <h2 class="movie-list-title">{{ movie.title }}</h2>
-            <p><a href="{{ url_for('movie', id=movie.id) }}">Learn More</a></p>
-        </div>
-        {% else %}
-        <p>No movie found</p>
-        {% endif %}
-    {% endfor %}
-    </div>
 </body>
 </html>

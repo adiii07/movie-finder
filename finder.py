@@ -14,3 +14,13 @@ def search_movie(name):
 def get_movie(id):
     m = movie.details(id)
     return m
+
+def get_cast(id):
+    c = movie.credits(id)
+    c = c.cast[:10]
+    cast =[]
+    for actor in c:
+        cast.append(actor["name"])
+    return cast
+
+print(get_cast(1726))

@@ -8,7 +8,7 @@ body {
 }
 
 form {
-    margin: 5% 0;
+    margin: 10% 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,7 +16,7 @@ form {
 
 legend {
     font-size: 40px;
-    padding-bottom: 5%;
+    padding-bottom: 3%;
 }
 
 .form {
@@ -35,7 +35,8 @@ legend {
 
 .main-movie {
     border: 1px solid black;
-    margin: 0 10%;
+    margin: 5% 10%;
+    background-color: rgb(255, 203, 196);
 }
 
 .movie-main-title {
@@ -65,20 +66,58 @@ legend {
     flex-flow: row wrap;
     align-items: center;
     justify-content: space-around;
-    margin: 0 20px;
+    margin: 0 5%;
 }
 
 .movie {
     width: 300px;
-    height: 100px;
     border: 1px black solid;
-    margin: 100px 0;
+    margin: 10px 20px;
+    background-color: rgb(255, 203, 196);
 }
 
 .details {
     margin: 50px 60px;
 }
 
+.details p {
+    font-size: 18px;
+}
+
 span {
     font-weight: 700;
+}
+
+.search-again {
+    font-size: 16px;
+    padding: 5px 8px;
+    background-color: brown;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.search- {
+    text-align: center;
+}
+
+.cast {
+    margin-left: 30px;
+}
+
+footer {
+    background-color: #333;
+    overflow: hidden;
+    text-align: center;
+    padding: 12px;
+    bottom: 0;
+    margin: 0
+}
+
+footer a {
+    text-decoration: none;
+    padding: 20px;
+    text-align: center;
+    color: white;
 }

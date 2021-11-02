@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Movie Finder</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <div class="main-movie">
+        <h2 class="movie-main-title">{{ movie1.title }}</h2>
+        <p class="movie-main-p">{{ movie1.overview }}</p>
+        <p class="main-learn"><a href="{{ url_for('movie', id=movie1.id) }}">Learn More</a></p>
+    </div>
+    
+    <p class="search-"><a class="search-again" href="{{ url_for('home') }}">Search Again</a></p>
+    
+    <h2 class="similar">Similar Results:</h2>
+    <div class="others">
+    {% for movie in movie_list %}
+        {% if movie %}
+        <div class="movie">
+            <h2 class="movie-list-title">{{ movie.title }}</h2>
+            <p><a href="{{ url_for('movie', id=movie.id) }}">Learn More</a></p>
+        </div>
+        {% else %}
+        <p>No movie found</p>
+        {% endif %}
+    {% endfor %}
+    </div>
+
+    <footer>
+        <a href="#">Copyright &copy; 2021</a>
+    </footer>
+</body>
+</html>
