@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="details">
+        <h2>{{movie.title}}</h2>
+        <p><span>Realease Date: </span>{{ movie.release_date }}</p>
+        <p><span>Overview: </span>{{movie.overview}}</p>
+        <p><span>Popularity:</span> {{ movie.popularity }}</p>
+        <p><span>Vote Average:</span> {{movie.vote_average}}</p>
+    </div>
+</body>
+</html>
