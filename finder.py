@@ -25,5 +25,3 @@ def get_cast(id):
 
 def get_popular():
     return movie.popular()
-
-print(get_movie(1726).genres)
