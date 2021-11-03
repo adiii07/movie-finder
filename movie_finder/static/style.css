@@ -6,6 +6,11 @@ body {
     color: white;
 }
 
+.container {
+    width: 1250px;
+    margin: 0 auto;
+  }
+
 form {
     margin: 5% 0;
     

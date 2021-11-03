@@ -9,6 +9,8 @@
 </head>
 <body>
     <h3 class="logo-corner">Not <span class="logo">IMDb</span></h3>
+
+    {% if movie1 %}
     <div class="main-movie">
         <img src="https://www.themoviedb.org/t/p/w220_and_h330_face{{movie1.poster_path}}" alt="">
         <h2 class="movie-main-title">{{ movie1.title }}</h2>
@@ -16,17 +18,20 @@
         <p class="movie-main-p">{{ movie1.release_date }}</p>
         <p class="main-learn"><a href="{{ url_for('movie', id=movie1.id) }}">Learn More</a></p>
     </div>
+    {% endif %}
     
     <div class="centre"><a href="{{ url_for('home') }}"><button class="form-submit">Search Again</button></a></div>
     
     <h2 class="similar">Similar Results:</h2>
     <div class="others">
     {% for movie in movie_list %}
+    {% if movie %}
     <div class="popular-movie">
         <img src="https://www.themoviedb.org/t/p/w220_and_h330_face{{movie.poster_path}}" alt="">
         <p><a href="{{ url_for('movie', id=movie.id) }}">{{ movie.title }}</a></p>
         <p>{{ movie.release_date }}</p>
     </div>
+    {% endif %}
     {% endfor %}
     </div>
 

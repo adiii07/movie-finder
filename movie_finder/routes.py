@@ -1,7 +1,8 @@
-from flask import render_template, url_for, request, redirect
+from flask import render_template, url_for, request, redirect, flash
 from movie_finder import app
 from movie_finder.forms import Form
 from finder import search_movie, get_movie, get_cast, get_popular
+from difflib import get_close_matches
 
 @app.route("/", methods=["GET", "POST"])
 def home():
@@ -10,7 +11,11 @@ def home():
     if request.method == "POST":
         name = request.form.get("name")
         movie_list = search_movie(name)
-        return redirect(url_for("search_results"))
+        if len(movie_list) > 0:
+            return redirect(url_for("search_results"))
+        else:
+            flash("No such movie", 'danger')
+            return redirect(url_for('home'))
     return render_template("index.html", popular_movies=popular_movies)
 
 @app.route("/results")
