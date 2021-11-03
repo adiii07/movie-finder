@@ -6,21 +6,19 @@ from difflib import get_close_matches
 
 @app.route("/", methods=["GET", "POST"])
 def home():
-    global movie_list
     popular_movies = get_popular()
     if request.method == "POST":
         name = request.form.get("name")
-        movie_list = search_movie(name)
-        if len(movie_list) > 0:
-            return redirect(url_for("search_results"))
-        else:
-            flash("No such movie", 'danger')
-            return redirect(url_for('home'))
+        return redirect(url_for("search_results", string=name))
     return render_template("index.html", popular_movies=popular_movies)
 
-@app.route("/results")
-def search_results():
-    movie1 = movie_list[0]
+@app.route("/results/<string>")
+def search_results(string):
+    movie_list = search_movie(string)
+    if len(movie_list) > 0:
+        movie1 = movie_list[0]
+    else:
+        return redirect(url_for('home'))
     return render_template("results.html", movie_list=movie_list[1:], movie1=movie1)
 
 @app.route("/movie/<int:id>")
