@@ -1,16 +1,17 @@
 from flask import render_template, url_for, request, redirect
 from movie_finder import app
 from movie_finder.forms import Form
-from finder import search_movie, get_movie, get_cast
+from finder import search_movie, get_movie, get_cast, get_popular
 
 @app.route("/", methods=["GET", "POST"])
 def home():
     global movie_list
+    popular_movies = get_popular()
     if request.method == "POST":
         name = request.form.get("name")
         movie_list = search_movie(name)
         return redirect(url_for("search_results"))
-    return render_template("index.html")
+    return render_template("index.html", popular_movies=popular_movies)
 
 @app.route("/results")
 def search_results():
