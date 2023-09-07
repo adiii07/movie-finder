@@ -10,4 +10,4 @@ Not IMDb uses flask for backend and the details about movies are from the TMDb A
 
 
 ## Demo Video
-## [Click here for the video](https://drive.google.com/file/d/1tJQsiGQfFub8t4v6wTQbLaKq4xXAY8HC/view?usp=sharing)
+## [Click here for the video]()
